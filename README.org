@@ -1,0 +1,30 @@
+# -*- mode: org;  -*-
+* HASS JSON-Schema
+
+[[https://builds.sr.ht/~johnhamelink.svg]] [[https://builds.sr.ht/~johnhamelink/hass-json-schema][View Builds]]
+
+---
+
+This repository contains a build script which compiles and archives the json-schema configuration used in =vscode-home-assistant=.
+
+** Why does this exist?
+
+- I want have access to the closest thing to the official home-assistant configuration spec, so I can use it with [[https://github.com/redhat-developer/yaml-language-server][yaml-language-server]] in my text editor. No, I do not want to use VSCode.
+- I don't want to have to manually build these files and keep them up to date, instead I want to be able to link to a URL and have the language server pull down the latest version periodically.
+
+** The files
+
+Here is a list of all the json-schema URLs for easy copy/pasting. I recommend referring to the URLs instead of downloading local copies, so that you always have the latest spec.
+
+#+BEGIN_SRC emacs-lisp :results table :exports results
+  (let ((json-files (mapcar #'file-name-nondirectory (directory-files "./json-schemas" 'match  (rx ".json" eos))))
+        (base-url "https://git.sr.ht/~johnhamelink/hass-json-schema/blob/main/json-schemas/"))
+    (let ((rows (mapcar (lambda (file)
+                    (list
+                     (format "=%s=" file)
+                     (format "[[%s][%s]]" (concat base-url file) "Link")))
+                  json-files))
+          (header (list "File Name" "URL")))
+      (cons header (cons 'hline rows))
+     ))
+#+END_SRC
