@@ -66,4 +66,3 @@ that you always have the latest spec.
 | `lovelace-cards.json`                      | [Link](https://git.sr.ht/~johnhamelink/hass-json-schema/blob/main/json-schemas/lovelace-cards.json)                      |
 | `lovelace-dashboard.json`                  | [Link](https://git.sr.ht/~johnhamelink/hass-json-schema/blob/main/json-schemas/lovelace-dashboard.json)                  |
 | `lovelace-views.json`                      | [Link](https://git.sr.ht/~johnhamelink/hass-json-schema/blob/main/json-schemas/lovelace-views.json)                      |
-# home-assistant-json-schema
